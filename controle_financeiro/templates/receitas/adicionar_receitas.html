@@ -1,0 +1,12 @@
+
+
+{% block content %}
+  <h2>Adicionar Receita</h2>
+  <form method="post" action="{% url 'adicionar_receita' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Adicionar</button>
+  </form>
+  <a href="{% url 'listar_receitas' %}">Voltar para Lista de Receitas</a>
+{% endblock %}
+

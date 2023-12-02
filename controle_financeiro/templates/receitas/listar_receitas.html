@@ -1,0 +1,17 @@
+
+
+{% block content %}
+  <h2>Lista de Receitas</h2>
+  <p>Total de Receitas: R$ {{ total_receitas }}</p>
+  <p>Total Geral: R$ {{ total_geral }}</p>
+
+  <ul>
+    {% for receita in receitas %}
+      <li>
+        <a href="{% url 'detalhar_receita' receita.id %}">{{ receita.descricao }}</a> - R$ {{ receita.valor }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'adicionar_receita' %}">Adicionar Receita</a>
+{% endblock %}

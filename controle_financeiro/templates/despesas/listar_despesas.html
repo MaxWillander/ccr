@@ -1,0 +1,17 @@
+
+
+{% block content %}
+  <h2>Lista de Despesas</h2>
+  <p>Total de Despesas: R$ {{ total_despesas }}</p>
+  <p>Total Geral: R$ {{ total_geral }}</p>
+
+  <ul>
+    {% for despesa in despesas %}
+      <li>
+        <a href="{% url 'detalhar_despesa' despesa.id %}">{{ despesa.descricao }}</a> - R$ {{ despesa.valor }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'adicionar_despesa' %}">Adicionar Despesa</a>
+{% endblock %}

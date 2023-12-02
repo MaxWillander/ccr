@@ -1,0 +1,12 @@
+
+
+{% block content %}
+  <h2>Adicionar Despesas</h2>
+  <form method="post" action="{% url 'adicionar_despesa' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Adicionar</button>
+  </form>
+  <a href="{% url 'listar_despesa' %}">Voltar para Lista de Despesas</a>
+{% endblock %}
+

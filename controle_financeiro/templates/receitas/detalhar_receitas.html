@@ -1,0 +1,10 @@
+
+
+{% block content %}
+  <h2>Detalhes da Receita</h2>
+  <p><strong>Descrição:</strong> {{ receita.descricao }}</p>
+  <p><strong>Valor:</strong> R$ {{ receita.valor }}</p>
+  <p><strong>Data:</strong> {{ receita.data }}</p>
+  <p><strong>Categoria:</strong> {{ receita.categoria.nome }}</p>
+  <a href="{% url 'listar_receitas' %}">Voltar para Lista de Receitas</a>
+{% endblock %}
